@@ -1,0 +1,41 @@
+<div class="mx-auto" style="text-align: center; margin-top: 15px">
+  <h1>Graficas de temperaturas registradas de usuarios</h1>
+</div>
+<div>
+  <div>
+    <div style="display: block" class="mx-auto w-75">
+      <canvas baseChart
+              [datasets]="barChartData"
+              [labels]="barChartLabels"
+              [options]="barChartOptions"
+              [legend]="barChartLegend"
+              [chartType]="barChartType">
+      </canvas>
+    </div>
+  </div>
+</div>
+
+<div class="mx-auto" style="text-align: center; margin-top: 15px">
+  <h1>Historial de temperaturas de usuarios</h1>
+</div>
+
+<div class="mx-auto w-75">
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Temperatura</th>
+      <th scope="col">Registro (check in)</th>
+      <th scope="col">RFID Usuario</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let i of temperaturas | async">
+      <th scope="row">{{i.id}}</th>
+      <td>{{i.temperatura}}</td>
+      <td>{{i.create}}</td>
+      <td>{{i.id_rfid}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

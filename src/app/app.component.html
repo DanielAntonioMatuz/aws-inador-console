@@ -1,0 +1,26 @@
+<div class="w-100" >
+  <!--<h1 style="color: blue">{{title}}</h1>
+  <h3>{{description}}</h3>-->
+  <!--<nav>
+    <a routerLink="customer" class="btn btn-primary active" role="button" routerLinkActive="active">Personas</a>
+    <a routerLink="add" class="btn btn-primary active" role="button" routerLinkActive="active">Añadir</a>
+    <a routerLink="findbyage" class="btn btn-primary active" role="button" routerLinkActive="active">Buscar</a>
+  </nav> -->
+
+  <nav class="navbar navbar-dark bg-primary w-100" style="padding: 30px; ">
+    <a class="navbar-brand mx-auto">Inador | Upwind</a>
+    <ul class="nav mx-auto">
+    <li class="nav-item">
+      <a class="nav-link active text-light" routerLink="customer">Usuarios</a>
+    </li>
+    <li class="nav-item ">
+      <a class="nav-link text-light" routerLink="/listRfid">RFIDs</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-light" routerLink="/temperaturas">Temperaturas</a>
+    </li>
+  </ul>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>

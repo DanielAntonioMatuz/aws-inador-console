@@ -1,0 +1,45 @@
+
+<div class="" style="margin-top: 15px; margin-bottom: 20px; border-radius: 15px; border: none">
+  <h1 style="text-align: center" class="title-a">RFIDs registrados: </h1>
+</div>
+
+<ul class="nav nav-pills nav-fill w-75 mx-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Listar RFIDs</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/addRfid"> Registrar RFID</a>
+  </li>
+
+</ul>
+
+<div *ngFor="let i of rfids | async" style="margin-top: 20px">
+  <div class="card mx-auto">
+    <div class="card__front card__part">
+      <img class="card__front-square card__square" src="https://image.ibb.co/cZeFjx/little_square.png">
+      <p class="card_numer">{{i.key}}</p>
+      <div class="card__space-75">
+        <span class="card__label">ID RFID</span>
+        <p class="card__info"> ID de usuario: {{i.id_usuario}}</p>
+      </div>
+      <div class="card__space-25">
+        <span class="card__label">Registro</span>
+        <p class="card__info">{{i.create}}</p>
+      </div>
+    </div>
+
+    <div class="card__back card__part">
+      <button style="padding: 5px; border-radius: 5px; border: none; margin-left: 10px; background: #f5365c; color: #fff " (click)="deleteRfid(i.id)">Eliminar</button>
+      <div class="card__black-line"></div>
+      <div class="card__back-content">
+        <div class="card__secret">
+          <p class="card__secret--last">UPCH</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+

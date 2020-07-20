@@ -1,0 +1,86 @@
+
+      <div *ngIf="customer" class="mx-auto">
+        <!--<hr>
+          <div class="">
+            <label>Nombre: </label> {{customer.nombre}}
+            <label>Apellidos: </label> {{customer.apellido}}
+          </div>
+          <div>
+
+          </div>
+          <div>
+            <label>Fecha de nacimiento: </label> {{customer.fecha_nacimiento}}
+          </div>
+          <div>
+            <label>Rol: </label> {{customer.rol}}
+          </div>
+
+          <span class="button is-small btn-danger" (click)='deleteCustomer()'>Eliminar</span>
+        <hr /> -->
+
+        <div class="card mb-3 mx-auto" style="max-width: 70%; max-height: 540px; margin-top: 20px; border-radius: 10px; border: none">
+          <div class="row no-gutters">
+            <div class="col-md-4">
+              <img style="max-width: 180px; max-height: 180px; margin-top: 13px; margin-left: 13px; border-radius: 15px" *ngIf="customer.id <= 5" src="assets/img/theme/team-{{customer.id}}.jpg" class="card-img" alt="...">
+              <img style="max-width: 180px; max-height: 180px" *ngIf="customer.id > 5" src="assets/img/code.svg" class="card-img" alt="...">
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">{{customer.nombre + ' ' + customer.apellido}} | ID: {{customer.id}}</h5>
+                <p class="card-text"> Rol en el sistema:<a class="font-weight-bold"> {{customer.rol}}</a></p>
+                <p class="card-text"><small class="text-muted">Fecha de nacimiento: {{customer.fecha_nacimiento}}  |  Fecha de registro en el sistema: {{customer.create}}</small></p>
+                <button class="btn btn-danger" (click)='deleteCustomer()'>Eliminar</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-top: 5px" data-target="#staticBackdrop">
+                  Actualizar datos
+                </button>
+
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="staticBackdropLabel">Actuaizar usuario</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+
+
+                        <form>
+                          <div class="form-group">
+                            <label for="exampleInputEmail1">Nombre(s)</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Apellidos</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1">
+                          </div>
+                          <div class="form-group">
+                            <label for="exampleInputPassword1">Fecha de nacimiento</label>
+                            <input type="date" class="form-control" id="exampleInputPassword1">
+                          </div>
+                        </form>
+
+
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-primary" (click)="updateActive(true)">Actualizar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>

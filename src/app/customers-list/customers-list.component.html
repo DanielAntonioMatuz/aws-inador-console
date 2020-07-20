@@ -1,0 +1,45 @@
+
+<div class="card" style="margin-top: 15px; border-radius: 15px; border: none">
+  <h1 style="text-align: center">Usuarios registrados: </h1>
+</div>
+
+<ul class="nav nav-pills nav-fill w-75 mx-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="#">Listar usuarios</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/add"> Registrar usuario</a>
+  </li>
+
+</ul>
+
+    <div *ngFor="let customer of customers | async"  style="align-content: center">
+      <customer-details [customer]='customer' class=""></customer-details>
+    </div>
+<div>
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-danger mx-auto" style="text-align: center; justify-content: center; align-items: center; align-content: center; width: 100%" data-toggle="modal" data-target="#exampleModal" >
+    Eliminar todos los datos
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Eliminar datos globales</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+         <p>¿Esta seguro de eliminar todos los datos del sistema de usuarios (usuarios)?</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+          <button type="button" class="btn btn-danger" (click)='deleteCustomers()' >Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

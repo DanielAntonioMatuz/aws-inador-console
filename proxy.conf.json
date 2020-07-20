@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+      "target": "http://100.25.154.25",
+      "secure": false,
+      "changeOrigin": true
+    }
+  }
